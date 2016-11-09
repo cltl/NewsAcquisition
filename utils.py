@@ -42,6 +42,27 @@ def extract_hits(url):
         results = {}
         
     return results
+
+def extract_size(url):
+    """
+    given an url:
+    http://news.fii800.lod.labs.vu.nl/news?offset=0&to=2015-09-27T00:00:00Z&media=News&size=1&from=2015-09-20T00:00:00Z&in=content&q=crash
+   
+    return the number of hitss
+   
+    :param str url: the url that return json
+   
+    :rtype: int
+    :return: int
+    """
+    response = requests.get(url)
+    if response.status_code == 200:
+        json = response.json()
+        result_size = int(json['hits']['total'])
+    else:
+        result_size = 0
+    
+    return result_size
     
 def get_all_hits(base, args):
     """
