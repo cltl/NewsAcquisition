@@ -2,6 +2,64 @@ import requests
 from collections import Counter
 import operator
 
+def show_me(main_dict, keys, headers, meta=set()):
+    """
+    this function shows in a html table
+    for the keys of the main dict the headers (attributes)
+    
+    :param dict main_dict: either lex_expr_objs or ev_meaning_objs
+    (see notebook 'Domain2lexical expression2event meanings.ipynb'
+    :pararm iterable keys: keys from the main_dict to inspect
+    :param list headers: the attribute you want to inspect from the keys
+    :param set meta: keys for which you want to show:
+    1. number of items
+    2. minimum, average, and maximum
+    
+    :rtype: IPython.core.display.HTML
+    :return: the results in a html table
+    """ 
+    rows = []
+    for key in keys:
+        if key not in main_dict:
+            row = [key] + ['NA' for _ in range(len(headers)-1)]
+            rows.append(row)
+            continue
+            
+        the_object = main_dict[key]
+        row = [getattr(the_object, header) for header in headers]
+        rows.append(row)
+    
+    df = pandas.DataFrame(rows, columns=headers)
+    
+    if meta:
+        print('number of rows: %s' % len(df))
+        for key in meta:
+            minimum = min(df[key])
+            maximum = max(df[key])
+            average = sum(df[key]) / len(df)
+            print('%s: min(%s), avg(%s), max(%s)' % (key, 
+                                                     minimum, 
+                                                     round(average, 2),
+                                                     maximum))
+    
+    table = tabulate(df, headers='keys', tablefmt='html')
+    return table
+
+def count_for_query(q):
+    base = 'http://news.fii800.lod.labs.vu.nl/news?'
+    args = {
+    'q' : q, # the query terms to look for
+    'in' : 'content', # look in title, content or both (supported values are: "title", "content", "both")
+    'from' : '2010-09-01T00:00:00Z', # from->starting datetime point
+    'to' : '2016-09-30T00:00:00Z', # ending datetime point
+    'source' : '', # source -> which source
+    'media' : 'News', # media -> media type ("Blog" or "News")
+    'size' : 1, # size -> amount of results to return
+    'offset' : 0,  # offset ->skip the first offset results (useful for pagination)
+    'match' : 'conjunct'
+    }
+    return extract_size(create_url(base, args))
+
 def create_url(base, args):
     """
     give the base url, add all arguments
@@ -17,7 +75,7 @@ def create_url(base, args):
                           if value])
     
     url = ''.join([base, arguments])
-    print(url)
+    #print(url)
     return url
 
 
