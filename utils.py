@@ -46,6 +46,9 @@ def show_me(main_dict, keys, headers, meta=set()):
     return table
 
 def count_for_query(q):
+    return extract_size(create_url_from_query(q))
+
+def create_url_from_query(q, size=1):
     base = 'http://news.fii800.lod.labs.vu.nl/news?'
     args = {
     'q' : q, # the query terms to look for
@@ -54,11 +57,11 @@ def count_for_query(q):
     'to' : '2016-09-30T00:00:00Z', # ending datetime point
     'source' : '', # source -> which source
     'media' : 'News', # media -> media type ("Blog" or "News")
-    'size' : 1, # size -> amount of results to return
+    'size' : size, # size -> amount of results to return
     'offset' : 0,  # offset ->skip the first offset results (useful for pagination)
     'match' : 'conjunct'
     }
-    return extract_size(create_url(base, args))
+    return create_url(base, args)
 
 def create_url(base, args):
     """
