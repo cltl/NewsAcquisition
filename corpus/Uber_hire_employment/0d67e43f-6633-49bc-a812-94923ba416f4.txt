@@ -1,0 +1,120 @@
+Oakland To Tech: Please Don’t Screw This Up Like Last Time
+A few weeks ago, I was having lunch with Darrell Jones III, who heads up business development at Clef, at the southern restaurant Pican a few blocks away from the Oakland building that 3,000 Uber workers are slated to move into by 2017. 
+ 
+Jones, who is half-black and half-Filipino and grew up partly on the North Side of Chicago, makes a point of being a patron at mostly black-owned businesses in the city. 
+ 
+The tiny eight-person startup he’s a part of is about two-factor authentication. But Clef employees had also taken it upon themselves to craft a tech equity plan for Oakland startups to help train and potentially hire local residents, meeting dozens of civic and non-profit leaders in the process. 
+ 
+Clef, an eight-person startup based in Downtown Oakland, was quietly crafting a tech equity plan to integrate local non-profits and residents into city’s burgeoning startup scene. 
+ 
+Every Wednesday, the startup’s employees cook dinner for whoever wants to come by. It’s a small-scale and recurring approach that is much more effective at building cross-cultural understanding than big donations or splashy volunteer days with hundreds of workers flooding into one-off projects. CEO Brennen Byrne said he started doing this when he moved to Oakland because he didn’t know anyone. Last month, the company had its 100th weekly dinner , and the floor was packed with people wearing everything from startup to “Black Lives Matter” tees. 
+ 
+“I think the thing that comes to mind when people think about tech coming into Oakland, it’s not that they dislike tech,” Jones told me last month. “They dislike the displacement and disaffection that comes with that. But if Oakland can be different, inclusive, representative, then tech becomes kind of welcome. It becomes uplifting rather than destructive. That’s what we’re trying to do with a new type of culture. We want to build real tech.” 
+ 
+It is a vision that is so simple to explain, and yet so hard to actually pull off. And now, the big question for them and Oakland is — how much time does anyone really have left? 
+ 
+Uber’s Bold Entrance 
+ 
+Yesterday, the city’s mayor Libby Schaaf, Uber’s Global Head of People Renee Atwood and council member Lynette McElhaney stood side by side in announcing the $50 billion company’s expansion into the East Bay. A year after Menlo Park’s Lane Partners scooped up the former Sears Building on top of the 19th Street BART Station, Uber decided to buy the property. 
+ 
+
+ 
+“We know Uber chose Oakland — that it was attracted to Oakland — because of our progressive values, our unique assets in this region and our incredible, innovative energy,” Schaaf said. “We’re excited you’re going to add to that and keep the magic alive in Oakland. Our authenticity, our working-class roots, our passion for the arts have always been what set Oakland apart.” 
+ 
+Four years after former Mayor Jean Quan’s bungled handling of the  anti-capitalist Occupy Oakland demonstrations ended up in the national press ,  Ayn Rand-loving Uber is barging its way into town. 
+ 
+The history of the building could not be more symbolic. It once housed a locally-owned department store called Capwell’s. Two decades ago, the space got scooped up by Sears, an American department store chain targeted at the middle-class. 
+ 
+A rendering of the old Capwell’s building — soon to be Uber’s — before it opened in the 1920s. 
+ 
+But by 2017, the building will house the biggest unicorn of the last economic cycle. That’s Uber, a company with a two-tiered labor structure that has one set of permanent employees who will get stock in the most hotly anticipated IPO since Facebook, and a much larger, and likely more diverse, contractor base that seems destined for obsolescence with the advance of self-driving cars. 
+ 
+Schaaf said she had four commitments she wanted Uber to make in expanding to the city. They are: 1) Be a compassionate good neighbor 2) Support the local economy 3) Achieve equity and 4) Fight displacement. 
+ 
+But neither the company nor the city revealed any details about what kinds of commitments Uber would actually make, saying that they needed a full year to plan it. Uber did not need the approval of the Oakland city government to buy the building, so Schaaf  did not have the power to cut a deal  for existing residents. But the city also did not offer tax incentives either, as San Francisco did when Twitter moved into the Mid-Market area. 
+ 
+Uber said that one-fifth of its Bay Area employees lived in Oakland, but declined to share diversity data or how many black full-time workers it employs. It’s a pointed oversight for a company moving into a city inextricably shaped by race. Oakland was one of the very few places in the Bay Area that African-Americans leaving the South could move to during and after World War II when restrictive racial covenants prevented them from joining neighborhoods with better-funded schools and services. 
+ 
+Those policies set in a place an enduring set of wealth differentials in property values and incomes that persist to this very day. That in turn leaves low-income and primarily black and Latino communities vulnerable to displacement as the regional population grows while wealthier suburbs fail to build their share of housing. (If you want to read an 11,000-word explanation about a microcosm of this in East Palo Alto, it’s right here.) 
+ 
+Jobs, Jobs, Jobs 
+ 
+The asks — decades ago and today — are really not all that different. Much of the Oakland conversation has historically been about jobs. 
+ 
+Real, permanent and upwardly mobile work for local residents. 
+ 
+Fifty years ago, another transformative transportation project ripped through Oakland. It was the publicly-conceived and publicly-funded BART system and it took a decade of organizing for black activists to overcome union and employer bias and win local residents access to construction and operational jobs. 
+ 
+This battle will need to happen a lot faster — barring a correction, of course. Uber is projected to bring 3,000 jobs to the city, making it the largest employer in the city that isn’t a government agency or medical center. 
+ 
+Uber only hired a diversity specialist four months ago, when it poached Damien Hooper-Campbell from Google as its global diversity and inclusion lead. Hooper-Campbell was around while Atwood fielded questions from the press corps. 
+ 
+“60 percent of our company’s employees have actually started in the last six months,” Atwood said, while dodging a reporter’s question about how many black employees the company had. “We only got all of our employees health care benefits on July 1. We’re literally building the programs right now with Damien on board.” 
+ 
+However, it’s hard to graft this kind of thinking later on in a company’s life. The technology companies that have been the most successful at navigating San Francisco politics have been thinking about local communities from Day 1, and it always emanates from the founder. 
+ 
+When Marc Benioff founded Salesforce, he set aside one percent of its equity for philanthropy. Meanwhile, the Danish founder of Zendesk, Mikkel Svane, has made community service a core part of the company culture . It’s even a recruiting tactic to attract civic-minded talent. Multiple times a week, Zendesk employees cover volunteering shifts in Tenderloin soup kitchens and the nearby senior center. 
+ 
+Yesterday while Atwood handled the presser in Oakland, CEO Travis Kalanick was all the way up in Seattle in timing for Chinese President Xi Jinping’s visit to the United States. Kalanick  recently raised $1.2 billion to compete in the mainland Chinese market . For Uber, the Oakland building is an extension of the main headquarters in Mission Bay, San Francisco; it’s not the central location. 
+ 
+Over the past year, I had talked to other CEOs of multi-billion dollar growth-stage companies that had looked at and passed on the Sears building. One said they declined because there wasn’t a clear line of sight to 1 million square feet of office space, in case they needed triple the size of the building. 
+ 
+Tech companies that move into Oakland will need to challenge their own assumptions about who can and can’t do the work. For instance, think about the $25,000 to $40,000 that tech companies routinely pay to recruiters as a percentage of a successful hire’s first-year salary. Could some of that be put to work in educational or training programs that level up local residents who have the drive and ambition instead? 
+ 
+“This is a very big chance for us to step up to the plate for everything we’ve been talking about for months and years about creating a different kind of tech scene in Oakland. We could make a blueprint for all the other cities that want to keep themselves more socioeconomically diverse,” said Albrey Brown, who started Telegraph Academy, a coding bootcamp for people of color in the East Bay. “Housing is definitely priority #1 but you also need to provide to community members — who are already here and are at risk of being pushed out — a way of getting into the community that’s moving in. I don’t think you can stop gentrification, but you can fight it. Jobs have to be a piece of that pie.” 
+ 
+Albrey Brown leads a session at Telegraph Academy, an East Bay-based coding bootcamp targeted at people of color. 
+ 
+Brown’s bootcamp graduates its first class tomorrow, with 15 students that range from a Special Forces veteran to a former non-technical Google employee. Brown, who never graduated college, started Telegraph Academy after finishing at Hack Reactor. He said he felt an obligation to bring what he had learned to his own community. So he partnered with Hack Reactor to create a specialized set of curriculum. 
+ 
+“I had spent three months going through a rigorous course, from making zero dollars to having the potential to make $100,000. I didn’t see anyone around me that had that opportunity. Nobody knew what I was doing. In fact, they thought it was a pyramid scheme,” he said. “I wanted to build something that would expose people to opportunities in tech right in their backyard in San Francisco.” 
+ 
+In addition to Telegraph, there are scores of other non-profit groups like Hack the Hood, Qeyno Labs and Black Girls Code, which are focused on training people of color on how to get into tech. 
+ 
+These are the human, intangible advantages that Oakland has that the Latino community San Francisco’s Mission District lacks — a unique mixture of local leaders of color who work in and really get the tech industry and successful entrepreneurs like Mitch Kapor, who sold Lotus to IBM for $3.5 billion in 1995 and has spent years thinking about inclusion and social justice . 
+ 
+Kapor and his wife Freada Kapor Klein are set to open a multi-story center in downtown Oakland devoted to technology for social impact and working with underrepresented communities. Notably, Kapor is an investor in Uber. The company said it planned to work with the center on its strategy. 
+ 
+In the Mission, the Latino community and the tech workers are like Mission and Valencia St. — two worlds that exist side-by-side and never intersect. Many of the city’s programs — on both the industry and civic sides — are important, but they might be too little, too late. Only last year did Ron Conway’s sf.Citi open a “Circle The Schools” program to get technology startups to a “adopt” a local public school . Likewise, the big non-profit that has been serving the Mission’s Latino community since 1960s, MEDA, has a small “Mission Techies” program connects local Latino youth to neighborhood startups like Double Dutch for visits. 
+ 
+Another fast-growing program called MissionBit puts dozens of volunteer programming instructors in the San Francisco Unified School District’s after school programs. Last year, they had too many volunteers and too few kids. Now the reverse is true and they need more coding instructors. 
+ 
+All of these are good ideas. It’s just that they should have been started years ago. 
+ 
+Housing and Displacement 
+ 
+The other key piece of the pie will be housing, an issue that has bedeviled San Francisco and Mayor Ed Lee. 
+ 
+To be clear, it’s not all San Francisco’s fault. The wealthy suburbs in the south like Palo Alto, Menlo Park, Mountain View and Cupertino remain psychologically attached to an image of themselves as low-rise, single-family home communities even though they now host multi-billion dollar corporations like Google and Facebook that have to bus in tens of thousands of additional workers from elsewhere in the region. Palo Alto, for instance has a 3-to-1 jobs to housing ratio and its daytime population doubles in size as workers stream in. 
+ 
+But the dynamics of the housing conversation is fundamentally different in the East Bay. In San Francisco, there’s a counterintuitive alliance of property owners who are protecting their financial assets or are fearful of change and a more working-class tenant base that wants the ability to stay in the city through anti-eviction measures and securing funding for new permanently affordable units. 
+ 
+In retrospect, the city and the Mission unknowingly made a strategic error after the last tech boom, when city’s Board of Supervisors defunded the neighborhood’s only non-profit developer  amid a political dispute between the board and the staff  a decade ago. That’s when the Mission’s leadership could have been buying land left and right at much cheaper prices in the mid-2000s. Because of this, the Mission’s affordable housing production has lagged behind other neighborhoods with longstanding affordable housing developers like Chinatown and the Tenderloin. The mistake was to assume the last tech boom was one and done. 
+ 
+Now a decade later, Mission Housing is finally back in the game and is competing against MEDA , with each gunning to acquire land for affordable housing. But now  land is selling for more than $250,000 per buildable unit  before construction and permitting. That’s why both are  supporting a November ballot initiative for a moratorium on market-rate development in the Mission , so they can affect land values and crowd out for-profit developers from getting the remaining parcels first. 
+ 
+In contrast in the East Bay, Oakland is still recovering from the foreclosure crisis. The conversation is much more centered on vigilance against unscrupulous banking practices. 
+ 
+Just hours before the Uber news leaked, Oakland’s city attorney said it had sued Wells Fargo on behalf of the many minority homeowners who were lured into predatory loans and then later lost their homes to foreclosure. The city found that black and Latino homeowners in Oakland were about 2.5 times more likely to get steered toward higher-interest loans even if they had the same credit scores as white borrowers. Between 2006 and 2011, one in seven of Oakland’s households faced default notices . 
+ 
+The city is also way behind San Francisco on housing production into this part of the economic cycle . It only issued 3,697 building permits between 2007 and the end of 2013 . 
+ 
+Most of city’s new housing construction over the last 30 years has been concentrated in the Jack London area, as part of California Governor Jerry Brown’s plan to build 10,000 new units when he was Oakland mayor. 
+ 
+But this isn’t because of NIMBYism. It’s because the city has nearly identical construction costs as San Francisco, but rents have only now reached a level where it makes financial sense for developers to take risk on new housing production. Oakland has nearly twice the landmass of San Francisco and about half the population, so Schaaf and her rival candidates last fall were all very pro-housing development. 
+ 
+The question is how to manage that growth for all the people who are already there. With Oakland seeing the fastest rising rents in the United States over the past year, Schaaf’s administration released a housing equity strategy a few weeks ago . The inequities are stark. Renters in Oakland have a median income of $34,195 and median incomes for non-white households have actually declined since 2000. 
+ 
+At the same time, state support for affordable housing development has fallen off a cliff (see below). The $10 million in affordable housing funds that the city sees annually is enough to maybe build one to dozen units per year. So Oakland will have to rely on bolstering tenant and anti-eviction protections because it can’t afford to subsidize new housing that’s accessible to renters making $30,000 or less per year. (Or maybe it should work out a housing-related deal with Uber.) 
+ 
+
+ 
+What is obvious on the Western side of the Bay from San Jose to San Francisco is that land values and rents are rising much faster than much of the income spectrum. An IPO or secondary round can mint dozens or hundreds of millionaires who then compete over exceedingly limited real estate turnover, but it takes years of organizing to move the minimum wage $3 higher per hour. 
+ 
+Even if there is a correction, as  venture capitalist and Uber investor Bill Gurley has been warning for months , there are fundamental structural differences at hand compared to the first tech boom 15 years ago. 
+ 
+The Internet is now 3 billion users strong, compared to 35 million users in 1995 . This means that tech startups can find product-market fit and scale to tens or hundreds of millions of users with only a handful of engineers . The wages and compensation reflect this reach, further stretching the income disparity between engineers that can touch tens of millions of users and service workers, who can only serve so many dishes, drive so many rides or do so many hair cuts per day. 
+ 
+This is the challenge — figuring out how to build lots of housing to keep up with employment and population growth, while also understanding how the industry’s rapidly diverging incomes intersects with land values and whether the region’s fragmented municipal governance and tax structure even makes sense anymore. 
+ 
+Now the ball is getting passed to Oakland — still recovering from the last tidal wave of capital during the subprime crisis — to figure it all out.

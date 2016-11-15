@@ -1,6 +1,27 @@
 import requests
 from collections import Counter
 import operator
+import os
+
+questions_file = "questions.tsv"
+corpus_dir="corpus/"
+
+def insert_qa(question, answer, query):
+	w=open(questions_file, 'a')
+	w.write('%s\t%s\t%s\n' % (question, answer, query))
+	w.close()
+
+def store_all_current_documents(q, results):
+	q=q.replace(' ', '_')
+	mydir=corpus_dir + q
+	os.mkdir(mydir)
+	for res in results.values():
+		src=res['_source']
+		title=src['title']
+		content=src['content']
+		id=src['id']
+		with open(mydir + '/' + id + '.txt', 'w') as w:
+			w.write('%s\n%s' % (title, content))
 
 def show_me(main_dict, keys, headers, meta=set()):
     """
