@@ -1,11 +1,77 @@
 import requests
-from collections import Counter
 import operator
 import os
 import json
+from SPARQLWrapper import SPARQLWrapper, JSON
+import datetime
+from collections import Counter
 
 questions_file = "questions.tsv"
 corpus_dir="corpus/"
+
+sparql_endpoint="http://sparql.fii800.lod.labs.vu.nl/sparql"
+graph_uri="http://longtailcorpus.org"
+
+def intersection(b1, b2):
+    if not len(b1) or not len(b2):
+        return 0.0
+    shared=[val for val in b1 if val in b2]
+    return len(shared)/min(len(set(b1)),len(set(b2)))
+    
+def coreferential(t1, t2, p1, p2, l1, l2, days, p_overlap, l_overlap):
+    return all([time_diff(t1,t2)<=days, intersection(p1,p2)>=p_overlap, intersection(l1,l2)>=l_overlap])
+
+def to_dbpedia(locs):
+    uris=set()
+    for l in locs:
+        uris.add("'http://dbpedia.org/resource/%s'" % l)
+    return ",".join(uris)
+
+def get_sparql_top():
+    return """PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX dt: <http://dbpedia.org/datatype/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX longtail: <http://longtailcorpus.org/>
+PREFIX ltvocab: <http://longtailcorpus.org/vocab/>
+PREFIX nif: <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#>
+SELECT ?n1 ?src (group_concat(?location;separator="|") as ?locations) (group_concat(?participant;separator="|") as ?participants) ?dct WHERE {
+  GRAPH <http://longtailcorpus.org> {
+    """
+
+def get_sparql_bottom():
+    return " } } ORDER BY ?dct"
+
+def get_sparql_middle(ids):    
+
+    return '''?n1 a longtail:NewsItem ;
+    dct:source ?src .
+    FILTER (?src IN (''' + ids + ''')) .
+    ?n1 dct:created ?dct ;
+    dct:publisher ?pub .
+	?n1 ltvocab:hasMention ?mention .
+OPTIONAL { ?mention a "GPE" ;
+                            nif:anchorOf ?location } .
+    OPTIONAL {?mention a ?type . FILTER(?type in ("PER", "LOC")) . ?mention nif:anchorOf ?participant }'''
+
+def get_news_from_fun_locations(ids):
+    query = get_sparql_top() + get_sparql_middle(ids) + get_sparql_bottom()
+    #print(query)
+    res=get_sparql_results(query)
+    return res
+
+def time_diff(t1, t2):
+    ta=datetime.datetime.strptime(t1, '%Y-%m-%dT%H:%M:%S')
+    tb=datetime.datetime.strptime(t2, '%Y-%m-%dT%H:%M:%S')
+    return abs((ta-tb).days)
+
+def get_sparql_results(query):
+
+    sparql = SPARQLWrapper(sparql_endpoint)
+    sparql.setQuery(query)
+    sparql.setReturnFormat(JSON)
+    sparql.method = 'POST'
+    results = sparql.query().convert()
+    return results["results"]["bindings"]
 
 def obtain_specific_identifiers(path_signalmedia_json, identifiers):
     """
