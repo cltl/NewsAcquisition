@@ -2,9 +2,30 @@ import requests
 from collections import Counter
 import operator
 import os
+import json
 
 questions_file = "questions.tsv"
 corpus_dir="corpus/"
+
+def obtain_specific_identifiers(path_signalmedia_json, identifiers):
+    """
+    create generator of json objects (representing signalmedia articles)
+    
+    :param str path_signalmedia_json: path to all signalmedia article in jsonl
+    (originally called signalmedia-1m.jsonl
+    :param set identifiers: the json objects for the identifiers
+    are returned
+    
+    :rtype: dict
+    :return: identifier -> json object
+    """
+    results = dict()
+    with open(path_signalmedia_json) as infile:
+        for counter, line in enumerate(infile, 1):
+            article = json.loads(line)
+            if article['id'] in identifiers:
+                results[article['id']] = article
+    return results
 
 def insert_qa(question, answer, query):
 	w=open(questions_file, 'a')
