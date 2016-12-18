@@ -29,12 +29,9 @@ def to_dbpedia(locs):
 
 def get_sparql_top():
     return """PREFIX dct: <http://purl.org/dc/terms/>
-PREFIX dt: <http://dbpedia.org/datatype/>
-PREFIX dc: <http://purl.org/dc/elements/1.1/>
-PREFIX longtail: <http://longtailcorpus.org/>
-PREFIX ltvocab: <http://longtailcorpus.org/vocab/>
 PREFIX nif: <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#>
-SELECT ?n1 ?src (group_concat(?location;separator="|") as ?locations) (group_concat(?participant;separator="|") as ?participants) ?dct WHERE {
+PREFIX gaf: <http://groundedannotationframework.org/gaf#>
+SELECT ?n1 ?src (group_concat(?location;separator="|") as ?locations) ?dct WHERE {
   GRAPH <http://longtailcorpus.org> {
     """
 
@@ -43,19 +40,19 @@ def get_sparql_bottom():
 
 def get_sparql_middle(ids):    
 
-    return '''?n1 a longtail:NewsItem ;
+    return '''?n1 a nif:Context ;
     dct:source ?src .
     FILTER (?src IN (''' + ids + ''')) .
+    ?mention nif:referenceContext ?n1 .
     ?n1 dct:created ?dct ;
     dct:publisher ?pub .
-	?n1 ltvocab:hasMention ?mention .
-OPTIONAL { ?mention a "GPE" ;
-                            nif:anchorOf ?location } .
-    OPTIONAL {?mention a ?type . FILTER(?type in ("PER", "LOC")) . ?mention nif:anchorOf ?participant }'''
+    ?mention nif:referenceContext ?n1 ;
+     gaf:denotes ?locentity . ?locentity a <http://cltl.nl/type/GPE> . ?mention nif:anchorOf ?location .
+    '''
 
 def get_news_from_fun_locations(ids):
     query = get_sparql_top() + get_sparql_middle(ids) + get_sparql_bottom()
-    #print(query)
+    print(query)
     res=get_sparql_results(query)
     return res
 
