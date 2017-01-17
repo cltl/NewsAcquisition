@@ -12,6 +12,41 @@ corpus_dir="corpus/"
 sparql_endpoint="http://sparql.fii800.lod.labs.vu.nl/sparql"
 graph_uri="http://longtailcorpus.org"
 
+def get_me_a_query(labels="'earthquake', 'quake', 'temblor', 'seism', 'tremor'", t=True, l=True, p=False, strictLocations=True):
+    query = get_sparql_top() + get_sparql_middle(labels, t, l, p, strictLocations) + get_sparql_bottom()
+    return query
+
+def get_sparql_top():
+    return """
+	PREFIX sem: <http://semanticweb.cs.vu.nl/2009/11/sem/>
+	PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+	PREFIX dbpedia: <http://dbpedia.org/resource/>
+	PREFIX owltime: <http://www.w3.org/TR/owl-time#>
+	PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+	PREFIX dbo: <http://dbpedia.org/ontology/>
+	SELECT ?event ?location ?time ?participant WHERE {
+    """
+
+def get_sparql_bottom():
+    return """
+	}
+    """
+
+def get_sparql_middle(labels="'earthquake', 'quake', 'temblor', 'seism', 'tremor'", t=True, l=True, p=False, strictLoc=True): # t->time, l->location, p->participants
+    timeString="\n\t\t?event sem:hasTime ?tmx . ?tmx owltime:inDateTime ?time . " if t else ""
+    locationString="\n\t\t?event sem:hasPlace ?location . " if l else ""
+    locationConstraint="\n\t\t?location a ?x . ?x rdfs:subClassOf* dbo:Place . " if strictLoc else ""
+    participantString="\n\t\t?event sem:hasActor ?participant . " if p else ""
+    return """
+		?event a sem:Event .
+		{ ?event rdfs:label ?label .
+		FILTER (?label IN (%s)) } 
+		UNION
+		{ ?event sem:hasActor ?nonentity .
+		?nonentity skos:relatedMatch dbpedia:Earthquake } . %s %s %s %s
+    """ % (labels, timeString, locationString, locationConstraint, participantString)
+
+
 def intersection(b1, b2):
     if not len(b1) or not len(b2):
         return 0.0
@@ -27,28 +62,6 @@ def to_dbpedia(locs):
         uris.add("'http://dbpedia.org/resource/%s'" % l)
     return ",".join(uris)
 
-def get_sparql_top():
-    return """PREFIX dct: <http://purl.org/dc/terms/>
-PREFIX nif: <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#>
-PREFIX gaf: <http://groundedannotationframework.org/gaf#>
-SELECT ?n1 ?src (group_concat(?location;separator="|") as ?locations) ?dct WHERE {
-  GRAPH <http://longtailcorpus.org> {
-    """
-
-def get_sparql_bottom():
-    return " } } ORDER BY ?dct"
-
-def get_sparql_middle(ids):    
-
-    return '''?n1 a nif:Context ;
-    dct:source ?src .
-    FILTER (?src IN (''' + ids + ''')) .
-    ?mention nif:referenceContext ?n1 .
-    ?n1 dct:created ?dct ;
-    dct:publisher ?pub .
-    ?mention nif:referenceContext ?n1 ;
-     gaf:denotes ?locentity . ?locentity a <http://cltl.nl/type/GPE> . ?mention nif:anchorOf ?location .
-    '''
 
 def get_news_from_fun_locations(ids):
     query = get_sparql_top() + get_sparql_middle(ids) + get_sparql_bottom()
@@ -323,7 +336,32 @@ def count_lenght(results):
     
     
     
-    
+"""
+def get_sparql_top():
+    return '''PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX nif: <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#>
+PREFIX gaf: <http://groundedannotationframework.org/gaf#>
+SELECT ?n1 ?src (group_concat(?location;separator="|") as ?locations) ?dct WHERE {
+  GRAPH <http://longtailcorpus.org> {
+    '''
+
+def get_sparql_bottom():
+    return " } } ORDER BY ?dct"
+
+def get_sparql_middle(ids):    
+
+    return '''?n1 a nif:Context ;
+    dct:source ?src .
+    FILTER (?src IN (''' + ids + ''')) .
+    ?mention nif:referenceContext ?n1 .
+    ?n1 dct:created ?dct ;
+    dct:publisher ?pub .
+    ?mention nif:referenceContext ?n1 ;
+     gaf:denotes ?locentity . ?locentity a <http://cltl.nl/type/GPE> . ?mention nif:anchorOf ?location .
+    '''
+"""
+
+
     
     
     
