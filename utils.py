@@ -12,8 +12,8 @@ corpus_dir="corpus/"
 sparql_endpoint="http://sparql.fii800.lod.labs.vu.nl/sparql"
 graph_uri="http://longtailcorpus.org"
 
-def get_me_a_query(labels="'earthquake', 'quake', 'temblor', 'seism', 'tremor'", t=True, l=True, p=False, strictLocations=True):
-    query = get_sparql_top() + get_sparql_middle(labels, t, l, p, strictLocations) + get_sparql_bottom()
+def get_me_a_query(labels="'earthquake', 'quake', 'temblor', 'seism', 'tremor'", t=True, l=True, p=False, strictLocations=True, pagerank=True, pr_limit=500.0):
+    query = get_sparql_top() + get_sparql_middle(labels, t, l, p, strictLocations, pagerank, pr_limit) + get_sparql_bottom()
     return query
 
 def get_sparql_top():
@@ -24,6 +24,7 @@ def get_sparql_top():
 	PREFIX owltime: <http://www.w3.org/TR/owl-time#>
 	PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 	PREFIX dbo: <http://dbpedia.org/ontology/>
+	PREFIX vrank: <http://purl.org/voc/vrank#>
 	SELECT ?event ?location ?time ?participant WHERE {
     """
 
@@ -32,19 +33,28 @@ def get_sparql_bottom():
 	}
     """
 
-def get_sparql_middle(labels="'earthquake', 'quake', 'temblor', 'seism', 'tremor'", t=True, l=True, p=False, strictLoc=True): # t->time, l->location, p->participants
+def get_sparql_middle(labels="'earthquake', 'quake', 'temblor', 'seism', 'tremor'", t=True, l=True, p=False, strictLoc=True, pagerank=True, pr_limit=500.0): # t->time, l->location, p->participants
+
     timeString="\n\t\t?event sem:hasTime ?tmx . ?tmx owltime:inDateTime ?time . " if t else ""
     locationString="\n\t\t?event sem:hasPlace ?location . " if l else ""
-    locationConstraint="\n\t\t?location a ?x . ?x rdfs:subClassOf* dbo:Place . " if strictLoc else ""
+    locationConstraint="""
+		?location a ?x . ?x rdfs:subClassOf* dbo:Place . 
+		FILTER (!REGEX(STR(?x), 'http://dbpedia.org/ontology/Country')) .
+		FILTER NOT EXISTS { ?x rdfs:subClassOf* dbo:Country  } . """ if strictLoc else ""
     participantString="\n\t\t?event sem:hasActor ?participant . " if p else ""
+    pageRankString="""
+		?location vrank:hasRank/vrank:rankValue ?pagerank .
+		FILTER (xsd:float(?pagerank)<=%f) .
+    """ % pr_limit
+
     return """
 		?event a sem:Event .
 		{ ?event rdfs:label ?label .
 		FILTER (?label IN (%s)) } 
 		UNION
 		{ ?event sem:hasActor ?nonentity .
-		?nonentity skos:relatedMatch dbpedia:Earthquake } . %s %s %s %s
-    """ % (labels, timeString, locationString, locationConstraint, participantString)
+		?nonentity skos:relatedMatch dbpedia:Earthquake } . %s %s %s %s %s
+    """ % (labels, timeString, locationString, locationConstraint, participantString, pageRankString)
 
 
 def intersection(b1, b2):
