@@ -57,7 +57,11 @@ def get_sparql_middle(labels="'earthquake', 'quake', 'temblor', 'seism', 'tremor
 		FILTER (?label IN (%s)) } 
 		UNION
 		{ ?event sem:hasActor ?nonentity .
-		?nonentity skos:relatedMatch dbpedia:Earthquake } . %s %s %s %s %s
+		?nonentity skos:relatedMatch dbpedia:Earthquake } 
+		UNION
+  		{ ?event sem:hasActor ?nonentity .
+		?nonentity skos:relatedMatch ?earthquakeX .
+  		?earthquakeX a dbo:Earthquake } .  %s %s %s %s %s
     """ % (labels, timeString, locationString, locationConstraint, participantString, pageRankString)
 
 
