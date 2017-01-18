@@ -45,7 +45,7 @@ def get_sparql_middle(labels="'earthquake', 'quake', 'temblor', 'seism', 'tremor
     pageRankString="""
 		?location vrank:hasRank/vrank:rankValue ?pagerank .
 		FILTER (xsd:float(?pagerank)<=%f) .
-    """ % pr_limit
+    """ % pr_limit if pagerank else ""
 
     return """
 		?event a sem:Event .
