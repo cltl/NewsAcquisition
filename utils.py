@@ -25,6 +25,9 @@ def get_sparql_top():
 	PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 	PREFIX dbo: <http://dbpedia.org/ontology/>
 	PREFIX vrank: <http://purl.org/voc/vrank#>
+	PREFIX dbc: <http://dbpedia.org/resource/Category:>
+	PREFIX dc: <http://purl.org/dc/elements/1.1/>
+	PREFIX dct: <http://purl.org/dc/terms/>
 	SELECT ?event ?location ?time ?participant WHERE {
     """
 
@@ -39,6 +42,7 @@ def get_sparql_middle(labels="'earthquake', 'quake', 'temblor', 'seism', 'tremor
     locationString="\n\t\t?event sem:hasPlace ?location . " if l else ""
     locationConstraint="""
 		?location a ?x . ?x rdfs:subClassOf* dbo:Place . 
+		FILTER NOT EXISTS { ?location dct:subject dbc:States_of_the_United_States } .
 		FILTER (!REGEX(STR(?x), 'http://dbpedia.org/ontology/Country')) .
 		FILTER NOT EXISTS { ?x rdfs:subClassOf* dbo:Country  } . """ if strictLoc else ""
     participantString="\n\t\t?event sem:hasActor ?participant . " if p else ""
